@@ -15,7 +15,7 @@
 
 	users.users.tombos = {
 		isNormalUser = true;
-		extraGroups = [ "wheel" ];
+		extraGroups = [ "wheel" "input" ];
 		packages = with pkgs; [
 			librewolf-bin
 			bat
