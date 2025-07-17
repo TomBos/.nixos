@@ -1,0 +1,2 @@
+# NixOs
+My NixOs Config
