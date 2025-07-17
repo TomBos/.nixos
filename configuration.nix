@@ -37,6 +37,7 @@
 		bat
 		pkgs.nerd-fonts.jetbrains-mono
 		pkgs.nerd-fonts.symbols-only
+		swww
 	];
 
 	xdg.portal.enable = true;
