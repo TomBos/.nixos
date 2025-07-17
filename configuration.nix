@@ -25,7 +25,7 @@
 	};
 
 	environment.systemPackages = with pkgs; [
-		vim-full
+		neovim
 		wl-clipboard
 		wget
 		git
