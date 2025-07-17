@@ -17,26 +17,26 @@
 		isNormalUser = true;
 		extraGroups = [ "wheel" ];
 		packages = with pkgs; [
-
+			librewolf-bin
+			bat
+			nerd-fonts.jetbrains-mono
+			nerd-fonts.symbols-only
 		];
 	};
 
 	environment.systemPackages = with pkgs; [
-		vim
+		vim-full
+		wl-clipboard
 		wget
 		git
 		xdg-desktop-portal
 		xdg-desktop-portal-wlr
 		wayland
-		pkgs.waybar
-		pkgs.dunst
+		waybar
+		dunst
 		libnotify
 		kitty
 		rofi-wayland
-		librewolf-bin
-		bat
-		pkgs.nerd-fonts.jetbrains-mono
-		pkgs.nerd-fonts.symbols-only
 		swww
 	];
 
