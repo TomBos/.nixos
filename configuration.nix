@@ -1,58 +1,56 @@
-
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+	imports = [
+		./hardware-configuration.nix
+	];
+	
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+	networking.hostName = "Nixie";
+	networking.networkmanager.enable = true;
 
-  networking.hostName = "Nixie";
-  networking.networkmanager.enable = true;
+	time.timeZone = "Europe/Prague";
 
-  time.timeZone = "Europe/Prague";
-  
+	users.users.tombos = {
+		isNormalUser = true;
+		extraGroups = [ "wheel" ];
+		packages = with pkgs; [
 
-  users.users.tombos = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ];
-     packages = with pkgs; [
-     ];
-  };
+		];
+	};
 
-  environment.systemPackages = with pkgs; [
-     vim
-     wget
-     git
-     xdg-desktop-portal
-     xdg-desktop-portal-wlr
-     wayland
-     pkgs.waybar
-     pkgs.dunst
-     libnotify
-     kitty
-     rofi-wayland
-     librewolf-bin
-	 bat
-  ];
+	environment.systemPackages = with pkgs; [
+		vim
+		wget
+		git
+		xdg-desktop-portal
+		xdg-desktop-portal-wlr
+		wayland
+		pkgs.waybar
+		pkgs.dunst
+		libnotify
+		kitty
+		rofi-wayland
+		librewolf-bin
+		bat
+		pkgs.nerd-fonts.jetbrains-mono
+	];
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-  ];
+	xdg.portal.enable = true;
+	xdg.portal.extraPortals = [
+		pkgs.xdg-desktop-portal-wlr
+		pkgs.xdg-desktop-portal-gtk
+	];
 
-  programs.hyprland.enable = true;
-  services.openssh.enable = true;
-  nix.settings.experimental-features = [
-      "nix-command" "flakes"
-  ];
+	programs.hyprland.enable = true;
+	services.openssh.enable = true;
+	nix.settings.experimental-features = [
+		"nix-command" "flakes"
+	];
 
-  system.stateVersion = "25.05"; # Did you read the comment?
-
+	# Did you read the nix-devs comments ?
+	system.stateVersion = "25.05";
 }
 
