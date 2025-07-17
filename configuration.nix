@@ -36,6 +36,7 @@
 		librewolf-bin
 		bat
 		pkgs.nerd-fonts.jetbrains-mono
+		pkgs.nerd-fonts.symbols-only
 	];
 
 	xdg.portal.enable = true;
