@@ -4,11 +4,11 @@
 	imports = [
 		./hardware-configuration.nix
 	];
-	
+
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
-	networking.hostName = "Nixie";
+	networking.hostName = "nixie";
 	networking.networkmanager.enable = true;
 
 	time.timeZone = "Europe/Prague";
@@ -18,9 +18,9 @@
 		extraGroups = [ "wheel" "input" ];
 		packages = with pkgs; [
 			librewolf-bin
-			bat
 			nerd-fonts.jetbrains-mono
 			nerd-fonts.symbols-only
+			tree
 		];
 	};
 
@@ -47,12 +47,17 @@
 	];
 
 	programs.hyprland.enable = true;
+
 	services.openssh.enable = true;
+
 	nix.settings.experimental-features = [
-		"nix-command" "flakes"
+		"nix-command"
+		"flakes"
+		"pipe-operators"
 	];
 
-	# Did you read the nix-devs comments ?
+	# Do not change this
+	# Unless you know what you are doing
 	system.stateVersion = "25.05";
 }
 
