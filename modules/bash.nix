@@ -20,7 +20,7 @@
 		};
 		
 		initExtra = ''
-			alias cd..="cd ..";
+			alias cd..="cd .."
 
 			# Source Bash Prompt
 			if [[ -f "$HOME/.bash_prompt" ]]; then
@@ -39,9 +39,8 @@
 			fi
 
 			# Source Bash functions
-			if [[ -f "$HOME/.bash_functions" ]]; then
-    			source "$HOME/.bash_functions"
-			fi
+			source ${./bash/functions.sh}		
+		
 		'';
 	};
 }
