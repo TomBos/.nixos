@@ -1,4 +1,7 @@
 { config, pkgs, ... }: {
+	
+	imports = [ ../../modules/bash.nix ];
+
 	home = {
 		username = "tombos";
 		homeDirectory = "/home/tombos";
