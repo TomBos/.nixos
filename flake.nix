@@ -23,7 +23,11 @@
 						home-manager = {
 							useGlobalPkgs = true;
 							useUserPackages = true;
-							users.tombos = import ./hosts/${name}/home.nix;
+							backupFileExtension = "backup";
+							
+							users = {
+								tombos = import ./hosts/${name}/home.nix;
+							};
 						};
 					}
 				];
