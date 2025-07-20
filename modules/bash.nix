@@ -8,17 +8,12 @@
 		if [[ -z "$DISPLAY" ]] && [[ "$(tty)" == "/dev/tty1" ]]; then
 			export XDG_SESSION_TYPE=wayland
 			dbus-run-session Hyprland
+			swww-deamon &
 		fi
 
-		# Load Custom exports and paths
-		if [[ -d "$HOME/.exports" ]]; then
-			for file in "$HOME/.exports/"*; do
-				if [[ -f "$file" ]]; then
-					source "$file"
-				fi
-			done
-		fi
-		
+		# Env
+		source ${./bash/exports.sh}
+
 		# Aliases
 		source ${./bash/aliases.sh}
 
