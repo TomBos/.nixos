@@ -20,7 +20,12 @@
 			librewolf-bin
 			nerd-fonts.jetbrains-mono
 			nerd-fonts.symbols-only
-			tree
+			kitty
+			rofi-wayland
+			swww
+			waybar
+			dunst
+			libnotify
 		];
 	};
 
@@ -32,12 +37,7 @@
 		xdg-desktop-portal
 		xdg-desktop-portal-wlr
 		wayland
-		waybar
-		dunst
-		libnotify
-		kitty
-		rofi-wayland
-		swww
+		tree
 	];
 
 	xdg.portal.enable = true;
@@ -47,13 +47,11 @@
 	];
 
 	programs.hyprland.enable = true;
-
 	services.openssh.enable = true;
 
 	nix.settings.experimental-features = [
 		"nix-command"
 		"flakes"
-		"pipe-operators"
 	];
 
 	# Do not change this

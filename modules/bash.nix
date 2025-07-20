@@ -5,6 +5,11 @@
     	enable = true;
 		initExtra = ''
 		
+		if [[ -z "$DISPLAY" ]] && [[ "$(tty)" == "/dev/tty1" ]]; then
+			export XDG_SESSION_TYPE=wayland
+			dbus-run-session Hyprland
+		fi
+
 		# Load Custom exports and paths
 		if [[ -d "$HOME/.exports" ]]; then
 			for file in "$HOME/.exports/"*; do
