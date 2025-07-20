@@ -39,8 +39,10 @@
 			fi
 
 			# Source Bash functions
-			source ${./bash/functions.sh}		
-		
+			source ${./bash/functions.sh}
+
+			# Custom Prompt
+			source ${./bash/prompt.sh}		
 		'';
 	};
 }
