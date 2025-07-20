@@ -3,6 +3,7 @@
 	imports = [ 
 		../../modules/bash.nix
 		../../modules/kitty/kitty.nix
+		../../modules/nvim/neovim.nix
 	];
 
 
@@ -15,6 +16,7 @@
 	programs.git.enable = true;
 	programs.bash.enable = true;
 	programs.kitty.enable = true;
+	programs.neovim.enable = true;
 }
 
 
