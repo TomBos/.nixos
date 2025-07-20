@@ -2,7 +2,6 @@
 	
 	imports = [ 
 		../../modules/bash.nix
-		../../modules/ssh.nix	
 		../../modules/kitty/kitty.nix
 		../../modules/nvim/neovim.nix
 	];
@@ -14,7 +13,6 @@
 		stateVersion = "25.05";
 	};
 	
-	programs.ssh.enable = true;
 	programs.git.enable = true;
 	programs.bash.enable = true;
 	programs.kitty.enable = true;
