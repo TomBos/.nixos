@@ -1,6 +1,10 @@
 { config, pkgs, ... }: {
 	
-	imports = [ ../../modules/bash.nix ];
+	imports = [ 
+		../../modules/bash.nix
+		../../modules/kitty/kitty.nix
+	];
+
 
 	home = {
 		username = "tombos";
@@ -10,6 +14,7 @@
 
 	programs.git.enable = true;
 	programs.bash.enable = true;
+	programs.kitty.enable = true;
 }
 
 

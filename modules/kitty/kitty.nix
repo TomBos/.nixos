@@ -1,12 +1,8 @@
 { config, pkgs, ... }: {
 	programs.kitty = {
-		enable = true;
-		font = {
-			family = "JetBrainsMono Nerd Font";
-			size = 14.0;
-		};
-
 		settings = {
+			font_family = "JetBrainsMono Nerd Font";
+			font_size = 14.0;
 			initial_window_width = "80";
 			initial_window_height = "36";
 			allow_remote_control = "yes";
