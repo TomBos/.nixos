@@ -13,7 +13,8 @@
 		homeDirectory = "/home/tombos";
 		stateVersion = "25.05";
 	};
-
+	
+	programs.ssh.enable = true;
 	programs.git.enable = true;
 	programs.bash.enable = true;
 	programs.kitty.enable = true;
