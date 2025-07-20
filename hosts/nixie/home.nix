@@ -2,6 +2,7 @@
 	
 	imports = [ 
 		../../modules/bash.nix
+		../../modules/ssh.nix	
 		../../modules/kitty/kitty.nix
 		../../modules/nvim/neovim.nix
 	];
