@@ -1,5 +1,5 @@
 # NixOs
-My NixOs Config
+My NixOs Config (No longer developed)
 
 ## Add a new host
 
